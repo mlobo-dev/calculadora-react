@@ -79,30 +79,20 @@
 
     <script type="text/babel">
 
-    function Header(){
-      return (
-        <div class="header"> Calculadora</div>
-      );
-    }
+    const Header = ()=>  <div class="header"> Calculadora</div>
+    
 
-    function Calculator(){
-      return(
-        <div class="calculator">
-           <Display/>
-           <Keyboard/> 
-            
-        </div>
-      ); 
-    }
-
-    function Display(){
-      return (
-        <div class="display"></div>
-      );
-    }
-
-    function Keyboard(){
-      return (
+    const Calculator= ()=>(
+      <div class="calculator">
+          <Display/>
+          <Keyboard/> 
+          
+      </div>
+    );
+   
+    const Display= ()=> <div class="display"></div>
+    
+    const Keyboard= ()=>(
         <div class="keyboard">
               <button>7</button>
               <button>8</button>
@@ -115,18 +105,16 @@
               <button>3</button>
               <button>0</button>
             </div>
-      );
-    }
+    );
+  
 
-    function App(){
-      return (
-        <div>
-          <Header/>
-          <Calculator/>
-         
-        </div>
-      );
-    }
+    const App = ()=>(
+      <div>
+        <Header/>
+        <Calculator/>
+      </div>
+    );
+
       ReactDOM.render(
         <App/>,
         document.getElementById("root")
