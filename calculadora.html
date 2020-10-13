@@ -78,12 +78,32 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-      ReactDOM.render(
-        <div>
-          <div class="header"> Calculadora</div>
-          <div class="calculator">
-            <div class="display"></div>
-            <div class="keyboard">
+
+    function Header(){
+      return (
+        <div class="header"> Calculadora</div>
+      );
+    }
+
+    function Calculator(){
+      return(
+        <div class="calculator">
+           <Display/>
+           <Keyboard/> 
+            
+        </div>
+      ); 
+    }
+
+    function Display(){
+      return (
+        <div class="display"></div>
+      );
+    }
+
+    function Keyboard(){
+      return (
+        <div class="keyboard">
               <button>7</button>
               <button>8</button>
               <button>9</button>
@@ -95,8 +115,20 @@
               <button>3</button>
               <button>0</button>
             </div>
-          </div>
-        </div>,
+      );
+    }
+
+    function App(){
+      return (
+        <div>
+          <Header/>
+          <Calculator/>
+         
+        </div>
+      );
+    }
+      ReactDOM.render(
+        <App/>,
         document.getElementById("root")
       );
     </script>
