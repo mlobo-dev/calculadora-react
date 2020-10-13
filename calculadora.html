@@ -81,24 +81,35 @@
 
     const Header = ()=>  <div className="header"> Calculadora</div>
     
+    const Button = (props) =>(
+      <button onClick={()=>{
+        props.onNumberClick(props.value)
+        }}
+        >{props.value}</button>
+    );
 
     const Calculator= ()=>{
      const [display,setDisplay] = React.useState("");
-     
+
+     const handlerNumberClick = (value) =>{
+        setDisplay(display+value)
+     }
+
      return (
       <div className="calculator">
           <Display display={display}/>
           <div className="keyboard">
-              <button onClick={()=>setDisplay(display+7)}>7</button>
-              <button>8</button>
-              <button>9</button>
-              <button>4</button>
-              <button>5</button>
-              <button>6</button>
-              <button>1</button>
-              <button>2</button>
-              <button>3</button>
-              <button>0</button>
+              <Button value={7} onNumberClick={handlerNumberClick}/>
+              <Button value={8} onNumberClick={handlerNumberClick}/>
+              <Button value={9} onNumberClick={handlerNumberClick}/>
+              <Button value={4} onNumberClick={handlerNumberClick}/>
+              <Button value={5} onNumberClick={handlerNumberClick}/>
+              <Button value={6} onNumberClick={handlerNumberClick}/>
+              <Button value={1} onNumberClick={handlerNumberClick}/>
+              <Button value={2} onNumberClick={handlerNumberClick}/>
+              <Button value={3} onNumberClick={handlerNumberClick}/>
+              <Button value={0} onNumberClick={handlerNumberClick}/>
+          
             </div>
           
       </div>
