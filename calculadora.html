@@ -79,22 +79,17 @@
 
     <script type="text/babel">
 
-    const Header = ()=>  <div class="header"> Calculadora</div>
+    const Header = ()=>  <div className="header"> Calculadora</div>
     
 
-    const Calculator= ()=>(
-      <div class="calculator">
-          <Display/>
-          <Keyboard/> 
-          
-      </div>
-    );
-   
-    const Display= ()=> <div class="display"></div>
-    
-    const Keyboard= ()=>(
-        <div class="keyboard">
-              <button>7</button>
+    const Calculator= ()=>{
+     const [display,setDisplay] = React.useState("");
+     
+     return (
+      <div className="calculator">
+          <Display display={display}/>
+          <div className="keyboard">
+              <button onClick={()=>setDisplay(display+7)}>7</button>
               <button>8</button>
               <button>9</button>
               <button>4</button>
@@ -105,9 +100,20 @@
               <button>3</button>
               <button>0</button>
             </div>
-    );
+          
+      </div>
+     );
+    }
+   
+    const Display= props =>{
+        return(
+          <div className="display">
+            {props.display}
+          </div>
+        )
+    } 
+    
   
-
     const App = ()=>(
       <div>
         <Header/>
